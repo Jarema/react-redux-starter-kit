@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 const paths = config.get('utils_paths');
 
 const webpackConfig = {
+  presets: ['es2015', 'stage-0', 'react'],
   name    : 'client',
   target  : 'web',
   entry   : {
@@ -40,8 +41,6 @@ const webpackConfig = {
         exclude : /node_modules/,
         loader  : 'babel',
         query   : {
-          stage    : 0,
-          optional : ['runtime'],
           env      : {
             development : {
               plugins : ['react-transform'],
